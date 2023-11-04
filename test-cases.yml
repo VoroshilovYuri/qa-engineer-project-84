@@ -102,7 +102,7 @@
     Открыта главная страница страница. Поле поиска и фильтры в начальном состоянии 
   test-data: |
     https://hexlet-products-store.vercel.app/
-    steps:
+  steps:
     - В списке Brand выбрать от 1 или несколько категорий брендов
     - В хедере сайта нажать на Store
   expected-result: |
