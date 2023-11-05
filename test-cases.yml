@@ -112,7 +112,7 @@
   requirement: |
     При закрытии модального окна Order placed successfully на крестик в правом углу оно должно закрыться
   prerequisites: |
-    Открыта страница Cart с уже добавленными товарами
+    Открыта главная страница
   test-data: |
     https://hexlet-products-store.vercel.app/
   steps:
