@@ -34,11 +34,12 @@ test-cases:
     Закрытие модального окна Order placed successfully на крестик в правом углу  
   status: fail  
 
-  bugreports:
+bugreports:
   - summary: |
      Проверка поиска при вводе несуществующего товара
   environment: |
-      oogle Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит)
+      Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
   steps-to-reproduce: |
       1. Открыта главная страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
       2. В меню поиска вводим значение ball
@@ -46,6 +47,51 @@ test-cases:
        Пользователь на главном экране видит результат поиска в виде плейсхолдера Nothing found!
   actual-result: |
       Пользователь видит главную страницу с товарами 
+
+- summary: |
+      Ввод отрицательных чисел в меню поиска Price
+environment: |
+      Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+steps-to-reproduce: |
+      1. Открыта главная страница 
+      2. Перейти к меню поиска Price
+      3. Ввести в строке поиска 'From' отрицательное число -200
+      4. Ввести в строке поиска 'To' отрицательное число -2 
+expected-result: |
+      Пользователь на главном экране видит результат поиска в виде плейсхолдера Nothing found!  
+actual-result: |
+       Пользователь видит главную страницу с товарами 
+
+- summary: |
+      Ссылка надписи Hexlet Store не активна
+environment: |
+      Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+steps-to-reproduce: |
+      1. Открыта главная страница
+      2. Кликнуть на надпись Hexlet Store в хедере страницы
+expected-result: |
+      Страница должна перезагрузиться
+actual-result: |
+     Страница не перзагружается
+
+- summary: |
+      Корзина остаётся полной после нажатия на Clear Cart
+environment: |
+      Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
+      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+steps-to-reproduce: |
+      1. Кладём в корзину один или несколько товаров
+      2. Переходим в корзину Cart
+      3. Нажимаем на кнопку Clear Cart
+      4. Нажимаем на Store в хедере страницы
+expected-result: |
+      Попадая на главную страницу корзина должна быть пуста
+actual-result: |
+      Попадая на главную страницу мы видим товары в корзине
+ 
+       
 
   
    
