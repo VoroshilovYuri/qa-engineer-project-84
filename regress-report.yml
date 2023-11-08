@@ -17,7 +17,7 @@ test-cases:
   - summary: |
       Пользователь должен иметь возможность фильтровать товары по списку меню
       Brand
-    status: pass
+   status: pass
 
   - summary: |
       Проверка поиска при вводе несуществующего товара
@@ -100,18 +100,18 @@ bugreports:
 
   - summary: |
       Не отображается товар в заданных граничных значениях в меню Price
-    environment: |
+  environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
       https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-    teps-to-reproduce: |
+  teps-to-reproduce: |
       1. Открыта главная страница
       https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
       2. Перейти к меню поиска Price
       3. Ввести в строке поиска 'From' 229.85
       4. Ввести в строке поиска 'To' 737.72
-    expected-result: |
+  expected-result: |
       На главной странице должны отобразиться товары в диапазоне введённых чисел
-    actual-result: |
+  actual-result: |
       Отображаются не все товары в диапазоне введённых чисел
  
   - summary: |
