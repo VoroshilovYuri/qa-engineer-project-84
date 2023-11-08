@@ -67,7 +67,7 @@ actual-result: |
 environment: |
   Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
    https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-steps-to-reproduce: >
+steps-to-reproduce: |
   1. Открыта главная страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
   2. Кликнуть на надпись Hexlet Store в хедере страницы
 expected-result: |
