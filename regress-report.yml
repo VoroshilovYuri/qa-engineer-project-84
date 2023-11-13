@@ -1,19 +1,19 @@
 ---
 test-cases:
   - summary: |
-      Пользователь должен иметь возможность добавлять товары в корзину и просматривать содержимое корзины
+      Проверка добавления товара в корзину
     status: pass
 
   - summary: |
-      Пользователь должен иметь возможность просматривать товары и просматривать подробную информацию о товаре
+     Просмотр подробной информации о товаре
     status: pass
 
   - summary: |
-      Пользователь должен иметь возможность фильтровать товары по выпадающему списку Category
+      Проверка фильтрации товара по выпадающему списку Category
     status: pass
 
   - summary: |
-      Пользователь должен иметь возможность фильтровать товары по списку меню  Brand
+      Проверка фильтрации товаров по списку меню Brand
     status: pass
 
   - summary: |
@@ -29,147 +29,129 @@ test-cases:
     status: pass
 
   - summary: |
-      Закрытие модального окна Order placed successfully на крестик в правом углу  
+      Проверка закрытия модального окна Order placed successfully на крестик   
     status: fail
 
 bugreports:
   - summary: |
-      Проверка поиска при вводе несуществующего товара
+      Не корректно отображается проверка поиска при вводе несуществующего товара
     environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     steps-to-reproduce: |
-      1. Открыта главная страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      2. В меню поиска вводим значение ball
+      1. В меню поиска вводим значение ball
     expected-result: |
-      Пользователь на главном экране видит результат поиска в виде плейсхолдера Nothing found!
+      На главном экране видим результат поиска в виде плейсхолдера Nothing found!
     actual-result: |
-      Пользователь видит главную страницу с товарами 
+       Отображается главная страница с товарами 
 
   - summary: |
-      Ввод отрицательных чисел в меню поиска Price
+      Некорректное отобоажение результата поиска после ввода отрицательных чисел в Price
     environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     steps-to-reproduce: |
-      1. Открыта главная страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      2. Перейти к меню поиска Price
-      3. Ввести в строке поиска 'From' отрицательное число -200
-      4. Ввести в строке поиска 'To' отрицательное число -2 
+      1. Перейти к меню поиска Price
+      2. Ввести в строке поиска 'From' отрицательное число -200
+      3. Ввести в строке поиска 'To' отрицательное число -2 
     expected-result: |
-      Пользователь на главном экране видит результат поиска в виде плейсхолдера Nothing found!  
+      На галвной странице видим результат поиска в виде плейсхолдера Nothing found!  
     actual-result: |
-      Пользователь видит главную страницу с товарами
-
+      Видим главную страницу с товарами
+      
   - summary: |
-      Ссылка надписи Hexlet Store не активна
+      При клике на Hexlet Store ссылка не активна
     environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-       https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     steps-to-reproduce: |
-      1. Открыта главная страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      2. Кликнуть на надпись Hexlet Store в хедере страницы
+      1. Кликнуть на надпись Hexlet Store в хедере страницы
     expected-result: |
       Страница должна перезагрузиться
     actual-result: |
       Страница не перзагружается
  
   - summary: |
-      Корзина остаётся полной после нажатия на Clear Cart
+      Корзина остаётся полной после перезагрузки страницы
     environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     steps-to-reproduce: |
-      1. Кладём в корзину один или несколько товаров
-      2. Переходим в корзину Cart
+      1. Добавляем в корзину один или несколько товаров
+      2. Переходим в Cart
       3. Нажимаем на кнопку Clear Cart
-      4. Нажимаем на Store в хедере страницы
+      4. Обновляем страницу
     expected-result: |
-      Попадая на главную страницу корзина должна быть пуста
+      После перезагрузки корзина должна быть пуста
     actual-result: |
-      Попадая на главную страницу мы видим товары в корзине
+      После перезагрузки товары остаются в корзине
+
+  - summary: |
+      Корзина остаётся полной после её очистки 
+    environment: |
+      Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
+    steps-to-reproduce: |
+      1. Добавляем в корзину один или несколько товаров
+      2. Переходим в Cart
+      3. Нажимаем на кнопку Clear Cart
+      4. Кликаем на Store
+    expected-result: |
+      При попадании на главную страницу корзина должна быть пуста
+    actual-result: |
+      При попадании на главную страницу видим, что товары остались в корзине    
 
   - summary: |
       Не отображается товар в заданных граничных значениях в меню Price
     environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     steps-to-reproduce: |
-      1. Открыта главная страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      2. Перейти к меню поиска Price
-      3. Ввести в строке поиска 'From' 229.85
-      4. Ввести в строке поиска 'To' 737.72
+      1. Перейти к меню поиска Price
+      2. Ввести в строке поиска 'From' 229.85
+      3. Ввести в строке поиска 'To' 737.72
     expected-result: |
-      На главной странице должны отобразиться товары в диапазоне введённых чисел
+      На главной странице должны отобразиться все товары в диапазоне введённых чисел
     actual-result: |
       Отображаются не все товары в диапазоне введённых чисел
- 
-  - summary: |
-      Корзина остаётся полной после нажатия на Clear Cart 
-    environment: |
-      Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-    steps-to-reproduce: |
-      1. Кладём в корзину один или несколько товаров
-      2. Переходим в корзину Cart
-      3. Нажимаем на кнопку Clear Cart
-      4. Перезагружаем страницу
-    expected-result: |
-      Корзина должна быть пуста
-    actual-result: |
-      Товары остаются в корзине
 
   - summary: |
-      В выпадающем меню Category отображается пустое значение
+      Не должно в выпадающем меню Category отображаеться пустое значение
     environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     steps-to-reproduce: |
-      1. Открыта главная страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      2. Переходим в выпадающий список Category
-      3. Выбираем пустое значение, которое идёт первым
+      1. Переходим в выпадающий список Category
+      2. Выбираем пустое значение, которое идёт первым
     expected-result: |
       Пользователь не должен иметь возможности выбирать пустое значение
     actual-result: |
-      На странице отображается ограниченный ассортимент товаров
+      При выбранном пустом значении на странице отображается ограниченный ассортимент товаров
 
   - summary: |
-      При выборе  категории в списке Category должны пропадать бренды в списке Brands
+      При выборе категории в Category должны отображаться бренды в списке Brands соответствующие ей
     environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     steps-to-reproduce: |
-      1. Открыта главная страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      2. Переходим в выпадающий список Category
-      3. Выбираем  значение smartphones
+      1. Переходим в выпадающий список Category
+      2. Выбираем  значение smartphones
     expected-result: |
-      Пользователь должен видеть в списке Brands только бренды смартфонов из выбранной категории
+      Список Brand должен отображать бренды выбранной категории товаров
     actual-result: |
       В списке Brands отображаются бренды всех товаров
 
   - summary: |
-      Поиск по ключевому слову
+      Некорректное отображение поиска по ключевому слову
     environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     steps-to-reproduce: |
-      1. Открыта главная страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      2. Переходим в меню поиска
-      3. Вводим в меню поиска слово Apple
+      1. Переходим в меню поиска
+      2. Вводим в меню поиска слово Apple
     expected-result: |
       Пользователь должен видеть на главной странице товары выбранного бренда
     actual-result: |
       На главной странице отображаются товары выбранного бренда и другие товары
 
   - summary: |
-      Отображение товаров при снятой галочке чекбокса In Stock
+      Некорректное отображение товаров при снятой галочке In Stock
     environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-      https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
     steps-to-reproduce: |
-      1. Открыта главная страница https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      2. Фильтры в изначальном состоянии
-      3. В чекбоске In Stock снимаем галочку
+      1. Фильтры в изначальном состоянии
+      2. В чекбоске In Stock снимаем галочку
     expected-result: |
       На главной странице должен отображаться плейсхолдер Nothing found!
     actual-result: |
